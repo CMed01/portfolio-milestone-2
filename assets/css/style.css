@@ -1,0 +1,33 @@
+body {
+    background: url("../images/golf-course.jpg") no-repeat center center;
+    background-size: cover;
+    background-size: 125%;
+}
+
+h1 {
+ text-align: center;
+}
+
+#game-outer-container {
+    width: 90%;
+    height: 80vh;
+    max-width: 2000px;
+    max-height: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding:2%;
+      
+}
+
+.question-container {
+    border: 5px solid black;
+    width:75%;
+    height:75%;
+    max-width: 1000px;
+    max-height:500px;
+    display: block;
+    vertical-align: middle;
+    margin: auto;
+    background-color: rgb(247, 254, 184);
+    opacity: 0.7;
+}
