@@ -43,7 +43,7 @@ label {
     opacity: 0.8;
 }
 
-.question-container{
+#question-container{
     width:80%;
     margin: 30px auto;
     text-align: center;
@@ -51,7 +51,7 @@ label {
     font-weight: bold;
 }
 
-.letter-container{
+#hangman-container{
     width:80%;
     margin: 30px auto;
     height: 100px;
@@ -59,10 +59,16 @@ label {
     font-weight: bold;
 }
 
-.keyboard-container {
+#letter-container {
     width:80%;
-    margin: 30px auto;
-    height: 100px;
-    text-align: center;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5em;
+}
+
+#letter-container button {
     font-weight: bold;
+    border-radius: 5px;
 }
