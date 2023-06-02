@@ -59,6 +59,8 @@ function generateRandomHangman(){
     // Use random number to append question
     chosenQuestion = gameQuestion[num1].question
     questionQuestion.innerHTML = chosenQuestion;
+
+    // Use random number to append hint1 and hint2
 }
 
 function checkAnswer() {
