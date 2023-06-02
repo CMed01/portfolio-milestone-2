@@ -2,10 +2,21 @@ body {
     background: url("../images/golf-course.jpg") no-repeat center center;
     background-size: cover;
     background-size: 125%;
+    font-family: 'Trykker', sans-serif;
 }
 
 h1 {
- text-align: center;
+    text-align: center;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6,
+label {
+    font-family: 'Fira Sans', sans-serif;
 }
 
 #game-outer-container {
@@ -15,19 +26,18 @@ h1 {
     max-height: 800px;
     margin-left: auto;
     margin-right: auto;
-    padding:2%;
-      
+    padding: 2%;
+
 }
 
 .question-container {
     border: 5px solid black;
-    width:75%;
-    height:75%;
+    width: 75%;
+    height: 75%;
     max-width: 1000px;
-    max-height:500px;
+    max-height: 500px;
     display: block;
-    vertical-align: middle;
     margin: auto;
-    background-color: rgb(247, 254, 184);
-    opacity: 0.7;
+    background-color: rgb(243, 244, 238);
+    opacity: 0.8;
 }

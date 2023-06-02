@@ -56,7 +56,12 @@ Github repository can be viewed here -
 
 
 #### __Typography__
-
+*  Google fonts was used for the typography for this website
+    * Fira Sans - used for all heading 1 elements
+    * Noto Sans - used for all other headings and labels
+    * Trykker - used for all other body elements
+    * Sans serif - used as back-up font
+ 
 
 #### __Features__
 
