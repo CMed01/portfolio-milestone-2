@@ -70,5 +70,8 @@ label {
 
 #letter-container button {
     font-weight: bold;
+    height: 1.4em;
+    width:2em;
+    height:2em;
     border-radius: 5px;
 }
