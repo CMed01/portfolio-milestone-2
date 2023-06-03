@@ -75,6 +75,15 @@ label {
     width:2em;
     height:2em;
     border-radius: 5px;
+    background-color:aliceblue;
+}
+
+#letter-container button:hover {
+    background-color: slategray;
+}
+
+#letter-container button:disabled {
+   color:lightgrey;
 }
 
 #new-game-container {
@@ -90,4 +99,13 @@ label {
     font-size: 1em;
     border-radius:5px;
     margin: 2em auto;
+}
+
+.hangman-selection {
+    font-size: xx-large;
+    letter-spacing: 10px;
+}
+
+.hide {
+    display:none;
 }

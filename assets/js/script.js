@@ -55,10 +55,15 @@ function generateRandomHangman(){
     // Generat random Number
     let num1 = Math.floor(Math.random() * gameQuestion.length);
 
-    // Use random number to generat Hangman
+    // Use random number to generate Hangman
     chosenWord = gameQuestion[num1].hangman;
     chosenWord = chosenWord.toUpperCase()
-    questionHangman.innerHTML = `<div class="hangman-selection">${chosenWord}</div>`;
+    questionHangman.innerHTML = `<div class="hangman-selection">${chosenWord}</div>`; 
+    
+    // Initial hangman replaced by <span> and underscore
+    let initialHangmanDisplay = chosenWord.replace(/./g, '<span class="hangman-selection">_</span>');   
+    questionHangman.innerHTML = initialHangmanDisplay;
+   
 
     // Use random number to append question
     chosenQuestion = gameQuestion[num1].question
