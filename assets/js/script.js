@@ -28,9 +28,10 @@ let gameQuestion = [
 const letterContainer = document.getElementById("letter-container");
 const questionHangman = document.getElementById("hangman-container");
 const questionQuestion = document.getElementById("question-container");
+const newGameButton = document.getElementsByClassName("new-game-btn");
 
-// Initial function when page loads
-function pageLoad() {
+// Initial function to initiate when DOM has loaded 
+document.addEventListener("DOMContentLoaded", function pageLoad() {
     // Add hangman letter to letter container
     for (let i = 65; i < 91; i++) {
         let button = document.createElement("button");
@@ -38,15 +39,18 @@ function pageLoad() {
         button.innerText = String.fromCharCode(i);
         letterContainer.append(button);
         } 
-        generateRandomHangman();
-    }
+    })
 
-window.onload = pageLoad();
 
 function startGame() {
-
+    document.addEventListener("click", function() {
+        generateRandomHangman()
+    })
 }
 
+/**
+ * Generates a random question and hangman and prints on the screen.
+ */
 function generateRandomHangman(){
     // Generat random Number
     let num1 = Math.floor(Math.random() * gameQuestion.length);
@@ -54,11 +58,11 @@ function generateRandomHangman(){
     // Use random number to generat Hangman
     chosenWord = gameQuestion[num1].hangman;
     chosenWord = chosenWord.toUpperCase()
-    questionHangman.innerHTML = chosenWord;
+    questionHangman.innerHTML = `<div class="hangman-selection">${chosenWord}</div>`;
 
     // Use random number to append question
     chosenQuestion = gameQuestion[num1].question
-    questionQuestion.innerHTML = chosenQuestion;
+    questionQuestion.innerHTML = `<div class="question-selection">${chosenQuestion}</div>`;
 
     // Use random number to append hint1 and hint2
 }
