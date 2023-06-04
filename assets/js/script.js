@@ -156,7 +156,8 @@ function hintReveal() {
 }
 
 function levelWon() {
-
+    let points = "";
+    points = (10 - hints);
 
 }
 
