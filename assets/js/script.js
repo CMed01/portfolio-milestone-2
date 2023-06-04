@@ -1,3 +1,4 @@
+// Options for the hangman
 let gameQuestion = [
     {
         question: "Name this golfer",
@@ -40,12 +41,22 @@ const questionHangman = document.getElementById("hangman-container");
 const questionQuestion = document.getElementById("question-container");
 const newGameButton = document.getElementsByClassName("new-game-btn");
 
+let winCount = 0;
+let loseCount = 0;
+
+let chosenWord = "";
+
 document.addEventListener("DOMContentLoaded", pageLoad())
 
 /**
  * Loads backgroud function for game on page load
  */
-function pageLoad() {
+function pageLoad() { 
+    winCount = 0;
+    loseCount = 0;
+
+    letterContainer.innerHTML = "";
+    
     // Add hangman user input letters to letter container
     for (let i = 65; i < 91; i++) {
         let button = document.createElement("button");
@@ -61,9 +72,18 @@ function pageLoad() {
                 btnArray.forEach(function checkLetters(char, index) {
                     if (char === button.innerText) {
                         dash[index].innerText = char;
+                        winCount += 1
+                        if (winCount === btnArray.length) {
+                            alert("Game won");
+                            }
                     }
                 });
-            }
+            } else {
+                loseCount += 1;
+                if (loseCount === 3) {
+                    alert("game over");
+                    }
+            } button.disabled = true;
         })
         letterContainer.append(button);
     }
@@ -76,12 +96,15 @@ function startGame() {
     document.addEventListener("click", generateRandomHangman());
     countdownTimer();
     livesCounter();
+    document.addEventListener("click", pageLoad());
 }
 
 /**
  * Generates a random question and hangman and prints on the screen.
  */
-function generateRandomHangman() { // Generat random Number
+function generateRandomHangman() { 
+    
+    // Generate random Number
     let num1 = Math.floor(Math.random() * gameQuestion.length);
 
     // Use random number to generate Hangman
@@ -100,10 +123,16 @@ function generateRandomHangman() { // Generat random Number
     // Use random number to append hint1 and hint2
 }
 
-function checkAnswers() {
+function hintReveal() {
     
 }
 
+function checkAnswer() {}
+
 function countdownTimer() {}
 
-function livesCounter() {}
+function livesCounter() {
+    let counter = 3 - loseCount;
+}
+
+// New game
