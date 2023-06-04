@@ -74,14 +74,15 @@ function pageLoad() {
                         dash[index].innerText = char;
                         winCount += 1
                         if (winCount === btnArray.length) {
-                            alert("Game won");
+                            levelWon()
+                            blocker();
                             }
                     }
                 });
             } else {
                 loseCount += 1;
                 if (loseCount === 3) {
-                    alert("game over");
+                    gameOver();
                     }
             } button.disabled = true;
         })
@@ -123,8 +124,29 @@ function generateRandomHangman() {
     // Use random number to append hint1 and hint2
 }
 
+// block buttons when win or lose game
+function blocker() {
+    let letterBtn = document.querySelectorAll(".letters")
+    letterBtn.forEach(function(button){
+        button.disabled = true;
+    })
+}
+
 function hintReveal() {
     
+}
+
+function levelWon() {
+
+
+}
+
+function gameWon() {
+
+}
+
+function gameOver() {
+
 }
 
 function checkAnswer() {}
