@@ -33,6 +33,22 @@ let gameQuestion = [
         hangman: "srixon",
         hint1: "japenese brand",
         hint2: "Hideki and Brooks currently use their clubs"
+    }, {
+        question: "Golf equipment brand",
+        hangman: "taylormade",
+        hint1: "american brand",
+        hint2: "driver models include the Aeroburner and M1"
+    }, {
+        question: "Golf equipment brand",
+        hangman: "titliest",
+        hint1: "company founded in 1932 by Phil Young",
+        hint2: "produce the most used golf ball on tour"
+    }
+    , {
+        question: "Name this golfer",
+        hangman: "gregnorman",
+        hint1: "won The Open in 1986 and 1993",
+        hint2: "also known as the Shark"
     }
 ]
 
