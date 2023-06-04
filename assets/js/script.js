@@ -40,6 +40,7 @@ const letterContainer = document.getElementById("letter-container");
 const questionHangman = document.getElementById("hangman-container");
 const questionQuestion = document.getElementById("question-container");
 const newGameButton = document.getElementsByClassName("new-game-btn");
+const lifeImage = document.getElementById("life-images");
 
 let winCount = 0;
 let loseCount = 0;
@@ -56,9 +57,18 @@ function pageLoad() {
     loseCount = 0;
 
     letterContainer.innerHTML = "";
-    
-    // Add hangman user input letters to letter container
-    for (let i = 65; i < 91; i++) {
+}
+   
+/**
+ * On click of new game button, the hangman will begin.
+ */
+function startGame() {
+    document.addEventListener("click", generateRandomHangman());
+    document.addEventListener("click", pageLoad());
+    createLifeIcons();
+
+     // Add hangman user input letters to letter container
+     for (let i = 65; i < 91; i++) {
         let button = document.createElement("button");
         button.classList.add("letters");
         button.innerText = String.fromCharCode(i);
@@ -81,8 +91,10 @@ function pageLoad() {
                 });
             } else {
                 loseCount += 1;
+                removeLifeIcon();
                 if (loseCount === 3) {
                     gameOver();
+                    blocker();
                     }
             } button.disabled = true;
         })
@@ -90,15 +102,6 @@ function pageLoad() {
     }
 }
 
-/**
- * On click of new game button, the hangman will begin.
- */
-function startGame() {
-    document.addEventListener("click", generateRandomHangman());
-    countdownTimer();
-    livesCounter();
-    document.addEventListener("click", pageLoad());
-}
 
 /**
  * Generates a random question and hangman and prints on the screen.
@@ -153,8 +156,20 @@ function checkAnswer() {}
 
 function countdownTimer() {}
 
-function livesCounter() {
-    let counter = 3 - loseCount;
+function createLifeIcons() {
+    let imagesToAdd = Math.min(3 - lifeImage.children.length);
+    for (let i = 0; i< imagesToAdd; i++) {
+        const addImgDiv = document.createElement("div");
+        addImgDiv.classList.add("life");
+        lifeImage.appendChild(addImgDiv);
+    }
 }
+
+function removeLifeIcon() {
+    let removeImgDiv = document.getElementsByClassName("life");
+    if (removeImgDiv.length > 0) {
+        lifeImage.removeChild(removeImgDiv[removeImgDiv.length - 1]);
+    }
+};
 
 // New game

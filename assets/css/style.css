@@ -43,9 +43,40 @@ label {
     opacity: 0.8;
     position:relative;
 }
+#question-header{
+    position: relative;
+}
+
+#points-container {
+    position:absolute;
+    top:5px;
+    left: 5px;
+    width:50px;
+}
+
+#lives-container {
+    position:absolute;
+    top:5px;
+    right: 5px;
+    width:130px;
+}
+
+#lives-container h4 {
+    margin:0;
+}
+
+.life {
+    width: 30px;
+    height: 35px;
+    background-image: url("../images/golf-ball-life.jpg");
+    background-size: cover;
+    aspect-ratio: 1;
+    display: inline-block;
+    margin-right:10px;
+}
 
 #question-container{
-    width:80%;
+    width:75%;
     margin: 30px auto;
     text-align: center;
     font-size: larger;
