@@ -166,7 +166,7 @@ function generateRandomHangman() {
     // Use random number to append hint1 and hint2
 }
 
-// block buttons when win or lose game
+// block letter buttons when win or lose game
 function blocker() {
     let letterBtn = document.querySelectorAll(".letters")
     letterBtn.forEach(function(button){
@@ -178,6 +178,9 @@ function hintReveal() {
     
 }
 
+/**
+ * Creates next level button and add 1 to the level count. If completes 3 levels then initiates gameWon()
+ */
 function levelWon() {
     if (levelCount === 2) {
         gameWon();
@@ -192,6 +195,9 @@ function levelWon() {
    }
 }
 
+/**
+ * When clicking on next level button, this will reset all the counts, except level count.
+ */
 function nextLevelBtn() {
     winCount = 0;
     loseCount = 0;
@@ -202,18 +208,23 @@ function nextLevelBtn() {
     startGame();
 }
 
+/**
+ * This function adds a congratulations message and a reset button to restart the game.
+ */
 function gameWon() {
     alert("You have completed the game! Well done, now click restart and have another go!")
 }
 
+/**
+ * Adds a comiseration mesaage and restarts the game
+ */
 function gameOver() {
 
 }
 
-function checkAnswer() {}
-
-function countdownTimer() {}
-
+/**
+ * Creates live container and adds three lives.
+ */
 function createLifeIcons() {
     livesContainer.classList.remove("hide");
     let imagesToAdd = Math.min(3 - lifeImage.children.length);
@@ -224,11 +235,12 @@ function createLifeIcons() {
     }
 }
 
+/**
+ * Removes a life counter
+ */
 function removeLifeIcon() {
     let removeImgDiv = document.getElementsByClassName("life");
     if (removeImgDiv.length > 0) {
         lifeImage.removeChild(removeImgDiv[removeImgDiv.length - 1]);
     }
 };
-
-// New game
