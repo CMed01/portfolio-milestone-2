@@ -1,5 +1,5 @@
 // Options for the hangman
-let gameQuestion = [
+const gameQuestion = [
     {
         question: "Name this golfer",
         hangman: "jordan spieth",
@@ -212,14 +212,31 @@ function nextLevelBtn() {
  * This function adds a congratulations message and a reset button to restart the game.
  */
 function gameWon() {
-    alert("You have completed the game! Well done, now click restart and have another go!")
+    let winMessage = document.createElement("p");
+    winMessage.classList.add("pmessage");
+    winMessage.innerHTML = "Well done on completing the Word Links Game. Click on new game and see if you can beat your previous score or try new questions.";
+    letterContainer.append(winMessage);
+    
+    let restartbtn = document.createElement("button");
+    restartbtn.classList.add("restart-btn");
+    restartbtn.setAttribute("onclick", "window.location.reload()");
+    restartbtn.innerText = "Restart Game";
+    newGameContainer.append(restartbtn);
+
+    if (newGameContainer.children.length > 1) {
+        newGameContainer.removeChild(newGameContainer.children[0]);
+    }
+
 }
 
 /**
  * Adds a comiseration mesaage and restarts the game
  */
 function gameOver() {
-
+    let loseMessage = document.createElement("p");
+    loseMessage.classList.add("pmessage");
+    loseMessage.innerHTML = "Unlucky, click on new game and give it another go";
+    letterContainer.append(loseMessage);
 }
 
 /**
