@@ -2,7 +2,7 @@
 let gameQuestion = [
     {
         question: "Name this golfer",
-        hangman: "jordanspieth",
+        hangman: "jordan spieth",
         hint1: "Studied at University of Texas",
         hint2: "Won his first major in 2015"
     },
@@ -20,12 +20,12 @@ let gameQuestion = [
     },
     {
         question: "Name this golfer",
-        hangman: "rorymcilroy",
+        hangman: "rory mcilroy",
         hint1: "has been no.1 golfer in the world",
         hint2: "From Northern Ireland"
     }, {
         question: "Name this golfer",
-        hangman: "jonrahm",
+        hangman: "jon rahm",
         hint1: "studied at Arizona state",
         hint2: "won the Masters in 2023"
     }, {
@@ -46,7 +46,7 @@ let gameQuestion = [
     }
     , {
         question: "Name this golfer",
-        hangman: "gregnorman",
+        hangman: "greg norman",
         hint1: "won The Open in 1986 and 1993",
         hint2: "also known as the Shark"
     }
@@ -56,10 +56,12 @@ const letterContainer = document.getElementById("letter-container");
 const questionHangman = document.getElementById("hangman-container");
 const questionQuestion = document.getElementById("question-container");
 const newGameButton = document.getElementsByClassName("new-game-btn");
+const livesContainer = document.getElementById("lives-container");
 const lifeImage = document.getElementById("life-images");
 
 let winCount = 0;
 let loseCount = 0;
+let spaceCount = 0
 
 let chosenWord = "";
 
@@ -71,6 +73,7 @@ document.addEventListener("DOMContentLoaded", pageLoad())
 function pageLoad() { 
     winCount = 0;
     loseCount = 0;
+    spaceCount = 0;
 
     letterContainer.innerHTML = "";
 }
@@ -81,27 +84,39 @@ function pageLoad() {
 function startGame() {
     document.addEventListener("click", generateRandomHangman());
     document.addEventListener("click", pageLoad());
+    
     createLifeIcons();
 
+    let dash = document.getElementsByClassName("hangman-selection");
+    let btnArray = chosenWord.split("");
+
+    // Replaces "_" where a space is back to a " ". Add 1 to the space count.
+    if (btnArray.includes(" ")) {
+                btnArray.forEach(function checkLetters(char, index) {
+                    if (char === " ") {
+                        dash[index].innerText = char;
+                        spaceCount += 1;
+                    }
+                });
+            }
+        
      // Add hangman user input letters to letter container
      for (let i = 65; i < 91; i++) {
         let button = document.createElement("button");
         button.classList.add("letters");
         button.innerText = String.fromCharCode(i);
+        // This will return an array of the letters contained in the hanagman
+       
 
         button.addEventListener("click", function () { 
-            // This will return an array of the letters contained in the hanagman
-            let btnArray = chosenWord.split("");
-            let dash = document.getElementsByClassName("hangman-selection");
             // Check if button is equal to letter in hangman then display in text.
             if (btnArray.includes(button.innerText)) {
                 btnArray.forEach(function checkLetters(char, index) {
                     if (char === button.innerText) {
                         dash[index].innerText = char;
                         winCount += 1
-                        if (winCount === btnArray.length) {
-                            levelWon()
-                            blocker();
+                        if ((winCount + spaceCount) === btnArray.length) {
+                            levelWon();
                             }
                     }
                 });
@@ -132,6 +147,7 @@ function generateRandomHangman() {
     chosenWord = chosenWord.toUpperCase()
     questionHangman.innerHTML = `<div class="hangman-selection">${chosenWord}</div>`;
 
+   
     // Initial hangman replaced by <span> and underscore
     let initialHangmanDisplay = chosenWord.replace(/./g, '<span class="hangman-selection">_</span>');
     questionHangman.innerHTML = initialHangmanDisplay;
@@ -156,10 +172,9 @@ function hintReveal() {
 }
 
 function levelWon() {
-    let points = "";
-    points = (10 - hints);
-
-}
+    alert("You have won!");
+    blocker();
+   }
 
 function gameWon() {
 
@@ -174,6 +189,7 @@ function checkAnswer() {}
 function countdownTimer() {}
 
 function createLifeIcons() {
+    livesContainer.classList.remove("hide");
     let imagesToAdd = Math.min(3 - lifeImage.children.length);
     for (let i = 0; i< imagesToAdd; i++) {
         const addImgDiv = document.createElement("div");
