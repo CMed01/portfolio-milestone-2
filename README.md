@@ -19,41 +19,48 @@ Github repository can be viewed here -
 ## __User Experience__
 
 ### __Strategy__
-
+The aim of the website is to display an interactive golf themed hangman game.
+Reasons for the site:
+* Enjoyment
+* Quiz
 
 #### __User Stories__
+* As a user I want to be able to:
 
-- #### First Time Visitor Goals
-
-    1. As a first time visitor, I want to understand the main purpose of the site and learn more about the business/organisation.
-    2. 
-
-- #### Returning Visitor Goals
-
-    1. As a returning visitor, I want to be able to access and view the gallery easily.
-    2. 
-
-- #### Frequent User Goals
-
-    1. As a frequent user, I want to be able to access and view the gallery and the business's social media links. Both will allow me to keep up to date with new baking projects.
-    2. 
+    1. Easily understand the main purpose of the website.
+    2. Easily navigate throughout the website to find and interact with the content.
+    3. Access the site from different devices
+    4. Play 3 rounds of the hangman style game.
+    5. See a running points counter.
+    6. See a time of the remaining time left to complete the three rounds.
+    7. Get feedback on whether answers were correct or not.
+    8. On successful completion of the game, obtain a high score and feedback message.
+    9. Restart/reset the game and to enjoy playing the game multiple times.
 
 ### __Scope__
+Functionally the site must be:
+* Easy to navigate
+* Well presented and display a funlly functioning golf themed hangman-style game
 
-
+Content should include the following:
+* Provide the user with the rules of the game.
+* Provide interactive fuctionailty to play the game.
+* Link to the developers GitHub account.
 
 ### __Structure__
-
-
+Based on the content required in the scope of this projec, this website will consist of only 1 page. The home page will have the game title display clearly the rules of the game with a start button. On click of the start button the game will load and have interactive functionailty. The game will be contained in a centralised container, with a golf themed background image.
 
 ### __Skelton (Wireframes)__
 
-
+Single wireframe image. The website will be responsive fitting all elements inside the width of the user screen.
+![Home Page Wireframe](/wireframe-golf-game.png)
+<br>
+Additon to the wireframe includes:
+* Points counter.
+* Timer.
+* Hint and restart buttons that will appear after gane loading.
 
 ### __Surface (including Features)__
-
-#### __Color scheme__
-
 
 #### __Typography__
 *  Google fonts was used for the typography for this website
@@ -62,9 +69,58 @@ Github repository can be viewed here -
     * Trykker - used for all other body elements
     * Sans serif - used as back-up font
  
-
 #### __Features__
+* Loading page
+    * Header for the page to include the the name of the game. 
+    * Div container displaying the rules of the game and a "new game" start button.
 
+* New game button
+    * On click of this button, the following will take place:
+        1. The lives counter will display three lives (each a golf ball on a tee image).
+        2. The points counter will be present displaying "0" at the start of the game.
+        3. A keyboard with 26 individual buttons, container letters A-Z, will appear. These buttons will have clickable functionality.
+        4. A random question and it's associated properties will be generated. 
+        5. The question, directing the user to the theme of the hangman will appear.
+        6. The answer will appear initialling a blank underscores, each underscore representing a letter.
+
+* Game screen
+    * The user can interact with the game by clicking on infividual letters. Doing so will check if the chose letter matches a letter in the randomly generated hangman
+    * After pressing a button, the button will be disabled preventing duplication.
+    * If the letter is correct, then it will replace the underscore with the chosen letter
+    * If the letter is not correct, the user will lose a life and will be refelecting the lives counter
+
+* Game over
+    * If the user selects three incorrect letters before the word is fully revealed a message will appear stating the end of the game. 
+    * The full word will not be revealed to allow for replayability
+    * A "restart game" button will be present for the user to click and restart the game. On click the page will be reloaded, subsequantly restarting the game.
+
+* Level complete
+    * If the user selects all the correct letters without losing all their lives. A winning message will appear.
+    * The points counter will be updated to reflect the win, with a total on 10 points on offer. 
+    * Each hint (see below) will reduce the total points available.
+    * Each live lost will also reduce the total points available.
+    * A "next level" button will appear and when click will generate another random question
+
+* Completion of game
+    * If the user successfully completes three levels, a congratulations message will appear.
+    * The total points will be included in the message
+    * A button will also appear to restart the game allowing the user to replay it with the aim of either beating their previous score or attempt other randomly generated questions.
+
+* Hint button
+    * For each questions, there will be two hints on offer.
+    * A button will be present for the user to reveal these hints providing support to the user to answer the hangman correctly
+    * Each hint will dimish the score by 2 points.
+
+* Future
+    * Increased question bank to imporve replayability
+        * There are currently 9 questions. This can be increased substantionally to allow further replayability.
+    * Allow user to filter the question choice
+        * Currently the questions are all contined in a single array. Future changes can group these into categories, allowing the user to filter the questions asked.
+    * Record user's high scores
+        * There is currently no function for the user to enter in any personal details, such as a username. Additon of this will further enhance user replayability.
+        * A high score storing function will challenge users to beat their previous attempts.
+    * Allow user to chose the size of the questions for each game (currently set at 3 levels). This will further increase replayability.
+    * Introducee a timer function to add extra pressure to answer all questions correctly.
 
 ## __Technologies__
 
@@ -77,12 +133,9 @@ Github repository can be viewed here -
 ### __Frameworks, programs and libraries__
 
 * [Figma](https://www.figma.com/) - Used to create wireframes for this website.
-* [Coolers](https://coolors.co/) - Used to create a colour scheme for this website.
-* [Stack Overflow](https://stackoverflow.com/) - Used to troubleshoot HTML and CSS coding queries.
+* [Stack Overflow](https://stackoverflow.com/) - Used to troubleshoot HTML, CSS and JavaeScript coding queries.
 * [Google Fonts](https://fonts.google.com/) - Used to apply fonts to this website.
 * [Fontjoy](https://fontjoy.com/) - Used to create font pairings.
-* [Font Awesome](https://fontawesome.com/) - Used to add icons to enhance user experience.
-* [Bitly](https://app.bitly.com/) - Used to create bitly links for long URLs.
 * [Am I Responsive?](https://ui.dev/amiresponsive) - Used to create an image of website on various screen sizes.
 
 ## __Testing__
@@ -92,6 +145,8 @@ Github repository can be viewed here -
 * __[W3C Markup Validation Service](https://validator.w3.org/)__
 
 * __[W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/)__
+
+* __[JavaScript Testing]()__
 
 * __Lighthouse testing using [PageSpeed Insights](https://pagespeed.web.dev/)__
     - Images can be converted to next-gen formats to improve performance on mobile devices
