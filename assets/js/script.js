@@ -56,12 +56,14 @@ const letterContainer = document.getElementById("letter-container");
 const questionHangman = document.getElementById("hangman-container");
 const questionQuestion = document.getElementById("question-container");
 const newGameButton = document.getElementsByClassName("new-game-btn");
+const newGameContainer = document.getElementById("new-game-container");
 const livesContainer = document.getElementById("lives-container");
 const lifeImage = document.getElementById("life-images");
 
 let winCount = 0;
 let loseCount = 0;
-let spaceCount = 0
+let spaceCount = 0;
+let levelCount = 0;
 
 let chosenWord = "";
 
@@ -74,6 +76,7 @@ function pageLoad() {
     winCount = 0;
     loseCount = 0;
     spaceCount = 0;
+    levelCount = 0;
 
     letterContainer.innerHTML = "";
 }
@@ -83,9 +86,12 @@ function pageLoad() {
  */
 function startGame() {
     document.addEventListener("click", generateRandomHangman());
-    document.addEventListener("click", pageLoad());
     
     createLifeIcons();
+
+    if (newGameContainer.children.length > 1) {
+        newGameContainer.removeChild(newGameContainer.children[1]);
+    }
 
     let dash = document.getElementsByClassName("hangman-selection");
     let btnArray = chosenWord.split("");
@@ -116,6 +122,7 @@ function startGame() {
                         dash[index].innerText = char;
                         winCount += 1
                         if ((winCount + spaceCount) === btnArray.length) {
+                            blocker()
                             levelWon();
                             }
                     }
@@ -172,12 +179,31 @@ function hintReveal() {
 }
 
 function levelWon() {
+    if (levelCount === 2) {
+        gameWon();
+   } else {
     alert("You have won!");
-    blocker();
+    levelCount += 1;
+    let levelbtn = document.createElement("button");
+    levelbtn.classList.add("next-level-btn");
+    levelbtn.setAttribute("onclick", "nextLevelBtn()");
+    levelbtn.innerText = "Next Level"
+    newGameContainer.append(levelbtn);
    }
+}
+
+function nextLevelBtn() {
+    winCount = 0;
+    loseCount = 0;
+    spaceCount = 0;
+
+    letterContainer.innerHTML = "";
+
+    startGame();
+}
 
 function gameWon() {
-
+    alert("You have completed the game! Well done, now click restart and have another go!")
 }
 
 function gameOver() {
