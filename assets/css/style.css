@@ -161,6 +161,19 @@ label {
     font-weight: bold;
 }
 
+#footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    font-size: xx-large;
+    color: white;
+}
+
+#footer i {
+    color: white;
+}
+
 /* Media Queries */
 /* Tablet devices (tablets, 850px and down) */
 @media only screen and (max-width: 850px) {
@@ -196,6 +209,10 @@ label {
         height: 2em;
     }
 
+    #footer {
+        margin-top: 40px;
+        font-size: x-large;
+    }
 }
 
 /* small devices (phones, 650px and down) */
@@ -307,4 +324,8 @@ label {
         margin: 40px auto;
     }
 
+    #footer {
+        margin-top: 40px;
+        padding-top: 30px;
+    }
 }
