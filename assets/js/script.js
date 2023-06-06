@@ -43,8 +43,7 @@ const gameQuestion = [
         hangman: "titliest",
         hint1: "company founded in 1932 by Phil Young",
         hint2: "produce the most used golf ball on tour"
-    }
-    , {
+    }, {
         question: "Name this golfer",
         hangman: "greg norman",
         hint1: "won The Open in 1986 and 1993",
@@ -73,7 +72,7 @@ document.addEventListener("DOMContentLoaded", pageLoad())
 /**
  * Loads backgroud function for game on page load
  */
-function pageLoad() { 
+function pageLoad() {
     winCount = 0;
     loseCount = 0;
     spaceCount = 0;
@@ -81,13 +80,13 @@ function pageLoad() {
 
     letterContainer.innerHTML = "";
 }
-   
+
 /**
  * On click of new game button, the hangman will begin.
  */
 function startGame() {
     document.addEventListener("click", generateRandomHangman());
-    
+
     createLifeIcons();
 
     if (newGameContainer.children.length > 1) {
@@ -101,24 +100,23 @@ function startGame() {
 
     // Replaces "_" where a space is back to a " ". Add 1 to the space count.
     if (btnArray.includes(" ")) {
-                btnArray.forEach(function checkLetters(char, index) {
-                    if (char === " ") {
-                        dash[index].innerText = char;
-                        spaceCount += 1;
-                    }
-                });
+        btnArray.forEach(function checkLetters(char, index) {
+            if (char === " ") {
+                dash[index].innerText = char;
+                spaceCount += 1;
             }
-        
-     // Add hangman user input letters to letter container
-     for (let i = 65; i < 91; i++) {
+        });
+    }
+
+    // Add hangman user input letters to letter container
+    for (let i = 65; i < 91; i++) {
         let button = document.createElement("button");
         button.classList.add("letters");
         button.innerText = String.fromCharCode(i);
         // This will return an array of the letters contained in the hanagman
-       
 
-        button.addEventListener("click", function () { 
-            // Check if button is equal to letter in hangman then display in text.
+
+        button.addEventListener("click", function () { // Check if button is equal to letter in hangman then display in text.
             if (btnArray.includes(button.innerText)) {
                 btnArray.forEach(function checkLetters(char, index) {
                     if (char === button.innerText) {
@@ -127,7 +125,7 @@ function startGame() {
                         if ((winCount + spaceCount) === btnArray.length) {
                             blocker()
                             levelWon();
-                            }
+                        }
                     }
                 });
             } else {
@@ -136,7 +134,7 @@ function startGame() {
                 if (loseCount === 3) {
                     gameOver();
                     blocker();
-                    }
+                }
             } button.disabled = true;
         })
         letterContainer.append(button);
@@ -147,9 +145,7 @@ function startGame() {
 /**
  * Generates a random question and hangman and prints on the screen.
  */
-function generateRandomHangman() { 
-    
-    // Generate random Number
+function generateRandomHangman() { // Generate random Number
     let num1 = Math.floor(Math.random() * gameQuestion.length);
 
     // Use random number to generate Hangman
@@ -157,7 +153,7 @@ function generateRandomHangman() {
     chosenWord = chosenWord.toUpperCase()
     questionHangman.innerHTML = `<div class="hangman-selection">${chosenWord}</div>`;
 
-   
+
     // Initial hangman replaced by <span> and underscore
     let initialHangmanDisplay = chosenWord.replace(/./g, '<span class="hangman-selection">_</span>');
     questionHangman.innerHTML = initialHangmanDisplay;
@@ -172,34 +168,34 @@ function generateRandomHangman() {
 // block letter buttons when win or lose game
 function blocker() {
     let letterBtn = document.querySelectorAll(".letters")
-    letterBtn.forEach(function(button){
+    letterBtn.forEach(function (button) {
         button.disabled = true;
     })
 }
 
-function hintReveal() {
-    
-}
+function hintReveal() {}
 
 /**
  * Creates next level button and add 1 to the level count. If completes 3 levels then initiates gameWon()
  */
 function levelWon() {
+    let livesRemaining = lifeImage.children.length;
+    let pointScore = 10 - (6 - (2 * (livesRemaining))) + (parseInt(totalPoints.innerText));
+    totalPoints.innerText = pointScore;
+
     if (levelCount === 2) {
         gameWon();
-   } else {
-    alert("You have won!");
-    levelCount += 1;
-    let levelbtn = document.createElement("button");
-    levelbtn.classList.add("next-level-btn");
-    levelbtn.setAttribute("onclick", "nextLevelBtn()");
-    levelbtn.innerText = "Next Level"
-    newGameContainer.append(levelbtn);
-   }
+    } else {
+        alert("You have won!");
+        levelCount += 1;
+        let levelbtn = document.createElement("button");
+        levelbtn.classList.add("next-level-btn");
+        levelbtn.setAttribute("onclick", "nextLevelBtn()");
+        levelbtn.innerText = "Next Level"
+        newGameContainer.append(levelbtn);
+    }
 
-   let livesRemaining = lifeImage.children.length;
-   let pointScore = 10 - (6-(2 * (livesRemaining))) + (parseInt(totalPoints.innerText));
-   totalPoints.innerText = pointScore;
+
 }
 
 /**
@@ -221,11 +217,16 @@ function nextLevelBtn() {
 function gameWon() {
     let winMessage = document.createElement("p");
     winMessage.classList.add("pmessage");
-    winMessage.innerHTML = `Well done on completing the Word Links Game. You socred a total of ${parseInt(totalPoints.innerText)} Click on new game and see if you can beat your previous score or try new questions.`;
+    if (parseInt(totalPoints.innerText) === 30){
+        winMessage.innerHTML = `Well done on completing the Word Links Game. You scored ${parseInt(totalPoints.innerText)}, which is the maximum score. WELL DONE!
+        Click on restart game and see if you can match your previous score or try new questions.`;
+    } else {
+    winMessage.innerHTML = `Well done on completing the Word Links Game. You socred a total of ${
+        parseInt(totalPoints.innerText)
+    } points. Click on new game and see if you can beat your previous score or try new questions.`;
+    }
     letterContainer.append(winMessage);
-    
     restartButton();
-
 }
 
 /**
@@ -236,7 +237,7 @@ function gameOver() {
     loseMessage.classList.add("pmessage");
     loseMessage.innerHTML = "Unlucky, click on new game and give it another go";
     letterContainer.append(loseMessage);
-    
+
     restartButton();
 }
 
@@ -247,7 +248,7 @@ function createLifeIcons() {
     livesContainer.classList.remove("hide");
     document.getElementById("points-container").classList.remove("hide");
     let imagesToAdd = Math.min(3 - lifeImage.children.length);
-    for (let i = 0; i< imagesToAdd; i++) {
+    for (let i = 0; i < imagesToAdd; i++) {
         const addImgDiv = document.createElement("div");
         addImgDiv.classList.add("life");
         lifeImage.appendChild(addImgDiv);
