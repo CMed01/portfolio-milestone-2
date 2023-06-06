@@ -217,7 +217,7 @@ function gameWon() {
     winMessage.innerHTML = "Well done on completing the Word Links Game. Click on new game and see if you can beat your previous score or try new questions.";
     letterContainer.append(winMessage);
     
-    restartBtn();
+    restartButton();
 
 }
 
@@ -230,7 +230,7 @@ function gameOver() {
     loseMessage.innerHTML = "Unlucky, click on new game and give it another go";
     letterContainer.append(loseMessage);
     
-    restartBtn();
+    restartButton();
 }
 
 /**
@@ -259,7 +259,7 @@ function removeLifeIcon() {
 /**
  * Creates a restart button that reloads the page and resetting the game.
  */
-function restartBtn() {
+function restartButton() {
     let restartbtn = document.createElement("button");
     restartbtn.classList.add("restart-btn");
     restartbtn.setAttribute("onclick", "window.location.reload()");
