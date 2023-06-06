@@ -48,6 +48,31 @@ const gameQuestion = [
         hangman: "greg norman",
         hint1: "won The Open in 1986 and 1993",
         hint2: "also known as the Shark"
+    }, {
+        question: "Name this famous golf course",
+        hangman: "augusta",
+        hint1: "First tournament played in 1934",
+        hint2: "Winner takes home a Green Jacket"
+    }, {
+        question: "Name this golfer",
+        hangman: "viktor hovland",
+        hint1: "Won the Mayakoba classic in 2020 and 2021",
+        hint2: "Born in Norway in 1997"
+    }, {
+        question: "Name this golf course",
+        hangman: "blackpage black",
+        hint1: "Course in New York State that is open to the public",
+        hint2: "Brooks Koepka won the PGA CHampionship here in 2019"
+    }, {
+        question: "Name this golf course",
+        hangman: "pebble beach",
+        hint1: "Course in California",
+        hint2: "Home of the AT&T championship"
+    }, {
+        question: "Golf terminology",
+        hangman: "shank",
+        hint1: "Another name for a cut of meat",
+        hint2: "Golfers worst shot off the heel"
     }
 ]
 
@@ -186,12 +211,23 @@ function levelWon() {
     if (levelCount === 2) {
         gameWon();
     } else {
-        alert("You have won!");
+        let levelWinMessage = document.createElement("p");
+        levelWinMessage.classList.add("pmessage");
+        if (levelCount === 0) {
+        levelWinMessage.innerHTML = `Well done on getting through the first level. Click next level to carry on.`;
+        letterContainer.append(levelWinMessage);
+        } else {
+            levelWinMessage.innerHTML = `Well done on getting through the second level. Click next level to take on the final challenge.`;
+            letterContainer.append(levelWinMessage); 
+        }
+
         levelCount += 1;
+
         let levelbtn = document.createElement("button");
         levelbtn.classList.add("next-level-btn");
         levelbtn.setAttribute("onclick", "nextLevelBtn()");
         levelbtn.innerText = "Next Level"
+
         newGameContainer.append(levelbtn);
     }
 
