@@ -59,6 +59,7 @@ const newGameButton = document.getElementsByClassName("new-game-btn");
 const newGameContainer = document.getElementById("new-game-container");
 const livesContainer = document.getElementById("lives-container");
 const lifeImage = document.getElementById("life-images");
+const totalPoints = document.getElementById("total-points");
 
 let winCount = 0;
 let loseCount = 0;
@@ -92,6 +93,8 @@ function startGame() {
     if (newGameContainer.children.length > 1) {
         newGameContainer.removeChild(newGameContainer.children[1]);
     }
+
+    restartButton();
 
     let dash = document.getElementsByClassName("hangman-selection");
     let btnArray = chosenWord.split("");
@@ -193,6 +196,10 @@ function levelWon() {
     levelbtn.innerText = "Next Level"
     newGameContainer.append(levelbtn);
    }
+
+   let livesRemaining = lifeImage.children.length;
+   let pointScore = 10 - (6-(2 * (livesRemaining))) + (parseInt(totalPoints.innerText));
+   totalPoints.innerText = pointScore;
 }
 
 /**
@@ -214,7 +221,7 @@ function nextLevelBtn() {
 function gameWon() {
     let winMessage = document.createElement("p");
     winMessage.classList.add("pmessage");
-    winMessage.innerHTML = "Well done on completing the Word Links Game. Click on new game and see if you can beat your previous score or try new questions.";
+    winMessage.innerHTML = `Well done on completing the Word Links Game. You socred a total of ${parseInt(totalPoints.innerText)} Click on new game and see if you can beat your previous score or try new questions.`;
     letterContainer.append(winMessage);
     
     restartButton();
@@ -238,6 +245,7 @@ function gameOver() {
  */
 function createLifeIcons() {
     livesContainer.classList.remove("hide");
+    document.getElementById("points-container").classList.remove("hide");
     let imagesToAdd = Math.min(3 - lifeImage.children.length);
     for (let i = 0; i< imagesToAdd; i++) {
         const addImgDiv = document.createElement("div");

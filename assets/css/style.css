@@ -54,14 +54,14 @@ label {
     width:50px;
 }
 
-#lives-container {
+#lives-container, #points-container {
     position:absolute;
     top:5px;
     right: 5px;
     width:130px;
 }
 
-#lives-container h4 {
+#lives-container h4, #points-container h4 {
     margin:0;
 }
 
@@ -73,6 +73,11 @@ label {
     aspect-ratio: 1;
     display: inline-block;
     margin-right:10px;
+}
+
+#total-points {
+    font-size: x-large;
+    text-align: center;
 }
 
 #question-container{
