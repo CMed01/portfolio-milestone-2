@@ -27,7 +27,6 @@ label {
     margin-left: auto;
     margin-right: auto;
     padding: 2%;
-
 }
 
 .game-inner-container {
@@ -41,28 +40,31 @@ label {
     margin: auto;
     background-color: rgb(243, 244, 238);
     opacity: 0.8;
-    position:relative;
+    position: relative;
 }
-#question-header{
+
+#question-header {
     position: relative;
 }
 
 #points-container {
-    position:absolute;
-    top:5px;
+    position: absolute;
+    top: 5px;
     left: 5px;
-    width:50px;
+    width: 130px;
 }
 
-#lives-container, #points-container {
-    position:absolute;
-    top:5px;
+#lives-container {
+    position: absolute;
+    top: 5px;
     right: 5px;
-    width:130px;
+    width: 130px;
+    text-align: right;
 }
 
-#lives-container h4, #points-container h4 {
-    margin:0;
+#lives-container h4,
+#points-container h4 {
+    margin: 0;
 }
 
 .life {
@@ -72,7 +74,7 @@ label {
     background-size: cover;
     aspect-ratio: 1;
     display: inline-block;
-    margin-right:10px;
+    margin-right: 10px;
 }
 
 #total-points {
@@ -80,24 +82,25 @@ label {
     text-align: center;
 }
 
-#question-container{
-    width:75%;
+#question-container {
+    width: 75%;
+    max-width: 200px;
     margin: 30px auto;
     text-align: center;
     font-size: larger;
     font-weight: bold;
 }
 
-#hangman-container{
-    width:80%;
+#hangman-container {
+    width: 90%;
     margin: 30px auto;
-    height: 100px;
+    height: 50px;
     text-align: center;
     font-weight: bold;
 }
 
 #letter-container {
-    width:60%;
+    width: 75%;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
@@ -108,10 +111,10 @@ label {
 #letter-container button {
     font-weight: bold;
     height: 1.4em;
-    width:2em;
-    height:2em;
+    width: 3em;
+    height: 3em;
     border-radius: 5px;
-    background-color:aliceblue;
+    background-color: aliceblue;
 }
 
 #letter-container button:hover {
@@ -119,11 +122,11 @@ label {
 }
 
 #letter-container button:disabled {
-   color:lightgrey;
+    color: lightgrey;
 }
 
 #new-game-container {
-    width:60%;
+    width: 60%;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
@@ -133,7 +136,7 @@ label {
 
 .new-game-btn {
     font-size: 1em;
-    border-radius:5px;
+    border-radius: 5px;
     margin: 2em auto;
 }
 
@@ -143,16 +146,165 @@ label {
 }
 
 .hide {
-    display:none;
+    display: none;
 }
 
-.next-level-btn, .restart-btn {
+.next-level-btn,
+.restart-btn {
     font-size: 1em;
-    border-radius:5px;
+    border-radius: 5px;
     margin: 2em auto;
 }
 
 .pmessage {
     text-align: center;
     font-weight: bold;
+}
+
+/* Media Queries */
+/* Tablet devices (tablets, 850px and down) */
+@media only screen and (max-width: 850px) {
+    body {
+        background-size: 200%;
+    }
+
+    .game-inner-container {
+        height: 88%;
+    }
+
+    #lives-container {
+        width: 100px;
+        font-size: small;
+    }
+
+    #points-container {
+        width: 100px;
+        font-size: small;
+    }
+
+    #total-points {
+        font-size: large;
+    }
+
+    .life {
+        width: 20px;
+        height: 25px;
+    }
+
+    #letter-container button {
+        width: 2em;
+        height: 2em;
+    }
+
+}
+
+/* small devices (phones, 650px and down) */
+@media only screen and (max-width: 650px) {
+
+    .game-inner-container {
+        height: 90%;
+    }
+
+    #question-container {
+        max-width: 150px;
+    }
+
+    #hangman-container {
+        margin: 10px auto;
+        height: 60px;
+        font-size: medium;
+    }
+
+    .hangman-selection {
+        font-size: x-large;
+    }
+
+    .pmessage {
+        font-size: small;
+        margin: 0 auto 0 auto;
+    }
+
+}
+
+/* extra small devices (phones, 550px and down) */
+@media only screen and (max-width: 550px) {
+    body {
+        background-size: 400%;
+    }
+
+    #question-container {
+        max-width: 100px;
+    }
+
+    #lives-container {
+        width: 90px;
+        font-size: x-small;
+    }
+
+    .life {
+        width: 15px;
+        height: 20px;
+        margin-right: 5px;
+    }
+
+    #points-container {
+        width: 90px;
+        font-size: x-small;
+    }
+
+    #total-points {
+        font-size: medium;
+    }
+
+    #hangman-container p {
+        font-size: small;
+    }
+
+    .hangman-selection {
+        letter-spacing: 8px;
+    }
+
+    .pmessage {
+        font-size: 75%;
+        margin: 0 auto 0 auto;
+    }
+
+}
+
+/* extra, extra small devices (phones, 420px and down) */
+@media only screen and (max-width: 420px) {
+    .game-inner-container {
+        height: 95%;
+    }
+
+    #lives-container {
+        width: 90px;
+        font-size: xx-small;
+    }
+
+    .life {
+        width: 13px;
+        height: 15px;
+        margin-right: 3px;
+    }
+
+    #points-container {
+        width: 90px;
+        font-size: xx-small;
+    }
+
+    #question-container {
+        font-size: medium;
+    }
+
+    #hangman-container {
+        height: 70px;
+    }
+
+    .new-game-btn,
+    .restart-btn {
+        font-size: 0.8em;
+        margin: 40px auto;
+    }
+
 }

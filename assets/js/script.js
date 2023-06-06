@@ -60,7 +60,7 @@ const gameQuestion = [
         hint2: "Born in Norway in 1997"
     }, {
         question: "Name this golf course",
-        hangman: "blackpage black",
+        hangman: "bethpage black",
         hint1: "Course in New York State that is open to the public",
         hint2: "Brooks Koepka won the PGA CHampionship here in 2019"
     }, {
