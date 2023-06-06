@@ -217,15 +217,7 @@ function gameWon() {
     winMessage.innerHTML = "Well done on completing the Word Links Game. Click on new game and see if you can beat your previous score or try new questions.";
     letterContainer.append(winMessage);
     
-    let restartbtn = document.createElement("button");
-    restartbtn.classList.add("restart-btn");
-    restartbtn.setAttribute("onclick", "window.location.reload()");
-    restartbtn.innerText = "Restart Game";
-    newGameContainer.append(restartbtn);
-
-    if (newGameContainer.children.length > 1) {
-        newGameContainer.removeChild(newGameContainer.children[0]);
-    }
+    restartBtn();
 
 }
 
@@ -237,6 +229,8 @@ function gameOver() {
     loseMessage.classList.add("pmessage");
     loseMessage.innerHTML = "Unlucky, click on new game and give it another go";
     letterContainer.append(loseMessage);
+    
+    restartBtn();
 }
 
 /**
@@ -261,3 +255,18 @@ function removeLifeIcon() {
         lifeImage.removeChild(removeImgDiv[removeImgDiv.length - 1]);
     }
 };
+
+/**
+ * Creates a restart button that reloads the page and resetting the game.
+ */
+function restartBtn() {
+    let restartbtn = document.createElement("button");
+    restartbtn.classList.add("restart-btn");
+    restartbtn.setAttribute("onclick", "window.location.reload()");
+    restartbtn.innerText = "Restart Game";
+    newGameContainer.append(restartbtn);
+
+    if (newGameContainer.children.length > 1) {
+        newGameContainer.removeChild(newGameContainer.children[0]);
+    }
+}
