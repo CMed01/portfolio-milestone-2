@@ -185,6 +185,7 @@ Additon to the wireframe includes:
         - Nil errors/bugs found in testing
     - One unused variable - nextLevelBtn
         - This variable is related to a function, which is passed to a created button element and used with no errors/bugs.
+        - Declared unused variable in a event listener, and issue now resolved.
 
 * __Lighthouse testing using (Google Dev Tools)__
     - Performance can be improved by:

@@ -250,15 +250,20 @@ function levelWon() {
 
         levelCount += 1;
 
-        let levelbtn = document.createElement("button");
-        levelbtn.classList.add("next-level-btn");
-        levelbtn.setAttribute("onclick", "nextLevelBtn()");
-        levelbtn.innerText = "Next Level";
-
-        newGameContainer.append(levelbtn);
+        createNextLevelButton();
     }
 
+}
 
+/**
+ * Creates a new level button
+ */
+function createNextLevelButton(){
+    let levelbtn = document.createElement("button");
+    levelbtn.classList.add("next-level-btn");
+    levelbtn.setAttribute("onclick", "nextLevelBtn()");
+    levelbtn.innerText = "Next Level";
+    newGameContainer.append(levelbtn);
 }
 
 /**
@@ -273,6 +278,9 @@ function nextLevelBtn() {
 
     startGame();
 }
+
+let nextLevel = document.getElementsByClassName("next-level-btn");
+nextLevel.addEventListener("click", nextLevelBtn);
 
 /**
  * This function adds a congratulations message and a reset button to restart the game.
