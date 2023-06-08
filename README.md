@@ -1,4 +1,4 @@
-# __Portfolio Project 2 - JaveScript__
+# __Portfolio Project 2 - JavaScript__
 ## __Word Links__
 ![Word Links](./assets/images/golf-links-icon.png)
 
@@ -164,10 +164,27 @@ Additon to the wireframe includes:
 ### __Validator testing__
 
 * __[W3C Markup Validation Service](https://validator.w3.org/)__
+    * Pass with no errors or warnings
+    * ![Markup result](./readme-assets/html-w3c-validator.png)
+
+<br>
 
 * __[W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/)__
+    * Pass with no errors found.
+    * ![Markup result](./readme-assets/css-validator.png)
+    
+    <br>
 
-* __[JavaScript Testing]()__
+* __[JavaScript Testing (JSHint)](https://jshint.com/)__
+    * There are 15 functions in this file.
+    * Function with the largest signature take 2 arguments, while the median is 0.
+    * Largest function has 19 statements in it, while the median is 6.
+    * The most complex function has a cyclomatic complexity value of 4 while the median is 2.
+    * 1 warning on line 174
+        * Functions declared within loops referencing an outer scoped variable may lead to confusing semantics. (btnArray, button, dash, winCount, spaceCount, blocker, levelWon, loseCount, removeLifeIcon, gameOver)
+        * Nil errors/bugs found in testing
+    * One unused variable - nextLevelBtn
+        * This variable is related to a function, which is passed to a created button element and used with no errors/bugs.
 
 * __Lighthouse testing using [PageSpeed Insights](https://pagespeed.web.dev/)__
     - Images can be converted to next-gen formats to improve performance on mobile devices
