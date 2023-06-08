@@ -110,7 +110,7 @@ function pageLoad() {
  * On click of new game button, the hangman will begin.
  */
 function startGame() {
-    document.addEventListener("click", generateRandomHangman);
+    document.addEventListener("click", generateRandomHangman());
 
     createLifeIcons();
 
@@ -170,10 +170,10 @@ function startGame() {
  * Generates a random question and hangman and prints on the screen.
  */
 function generateRandomHangman() { // Generate random Number
-    let num1 = Math.floor(Math.random() * gameQuestion.length);
+    let randomQuestionIndex = Math.floor(Math.random() * gameQuestion.length);
 
     // Use random number to generate Hangman
-    chosenWord = gameQuestion[num1].hangman;
+    chosenWord = gameQuestion[randomQuestionIndex].hangman;
     chosenWord = chosenWord.toUpperCase()
     questionHangman.innerHTML = `<div class="hangman-selection">${chosenWord}</div>`;
 
@@ -183,7 +183,7 @@ function generateRandomHangman() { // Generate random Number
     questionHangman.innerHTML = initialHangmanDisplay;
 
     // Use random number to append question
-    chosenQuestion = gameQuestion[num1].question
+    chosenQuestion = gameQuestion[randomQuestionIndex].question
     questionQuestion.innerHTML = `<div class="question-selection">${chosenQuestion}</div>`;
 
     // Use random number to append hint1 and hint2
