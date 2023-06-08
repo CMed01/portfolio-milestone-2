@@ -171,8 +171,7 @@ function startGame() {
         // This will return an array of the letters contained in the hanagman
 
 
-        button.addEventListener("click", function () { 
-            // Check if button is equal to letter in hangman then display in text.
+        button.addEventListener("click", function () { // Check if button is equal to letter in hangman then display in text.
             if (btnArray.includes(button.innerText)) {
                 btnArray.forEach(function checkLetters(char, index) {
                     if (char === button.innerText) {
@@ -241,24 +240,21 @@ function levelWon() {
         let levelWinMessage = document.createElement("p");
         levelWinMessage.classList.add("pmessage");
         if (levelCount === 0) {
-        levelWinMessage.innerHTML = `Well done on getting through the first level. Click next level to carry on.`;
-        letterContainer.append(levelWinMessage);
+            levelWinMessage.innerHTML = `Well done on getting through the first level. Click next level to carry on.`;
+            letterContainer.append(levelWinMessage);
         } else {
             levelWinMessage.innerHTML = `Well done on getting through the second level. Click next level to take on the final challenge.`;
-            letterContainer.append(levelWinMessage); 
-        }
-
-        levelCount += 1;
+            letterContainer.append(levelWinMessage);
+        } levelCount += 1;
 
         createNextLevelButton();
     }
-
 }
 
 /**
  * Creates a new level button
  */
-function createNextLevelButton(){
+function createNextLevelButton() {
     let levelbtn = document.createElement("button");
     levelbtn.classList.add("next-level-btn");
     levelbtn.setAttribute("onclick", "nextLevelBtn()");
@@ -279,24 +275,22 @@ function nextLevelBtn() {
     startGame();
 }
 
-let nextLevel = document.getElementsByClassName("next-level-btn");
-nextLevel.addEventListener("click", nextLevelBtn);
-
 /**
  * This function adds a congratulations message and a reset button to restart the game.
  */
 function gameWon() {
     let winMessage = document.createElement("p");
     winMessage.classList.add("pmessage");
-    if (parseInt(totalPoints.innerText) === 30){
-        winMessage.innerHTML = `Well done on completing the Word Links Game. You scored ${parseInt(totalPoints.innerText)}, which is the maximum score. WELL DONE!
+    if (parseInt(totalPoints.innerText) === 30) {
+        winMessage.innerHTML = `Well done on completing the Word Links Game. You scored ${
+            parseInt(totalPoints.innerText)
+        }, which is the maximum score. WELL DONE!
         Click on restart game and see if you can match your previous score or try new questions.`;
     } else {
-    winMessage.innerHTML = `Well done on completing the Word Links Game. You socred a total of ${
-        parseInt(totalPoints.innerText)
-    } points. Click on new game and see if you can beat your previous score or try new questions.`;
-    }
-    letterContainer.append(winMessage);
+        winMessage.innerHTML = `Well done on completing the Word Links Game. You socred a total of ${
+            parseInt(totalPoints.innerText)
+        } points. Click on new game and see if you can beat your previous score or try new questions.`;
+    } letterContainer.append(winMessage);
     restartButton();
 }
 

@@ -327,6 +327,7 @@ label {
 
     #question-container {
         font-size: medium;
+        margin-bottom:5px;
     }
 
     #hangman-container {
@@ -336,7 +337,7 @@ label {
     .new-game-btn,
     .restart-btn {
         font-size: 0.8em;
-        margin: 40px auto;
+        margin: 30px auto;
     }
 
     #footer {
