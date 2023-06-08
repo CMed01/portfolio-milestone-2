@@ -257,7 +257,7 @@ function levelWon() {
 function createNextLevelButton() {
     let levelbtn = document.createElement("button");
     levelbtn.classList.add("next-level-btn");
-    levelbtn.setAttribute("onclick", "nextLevelBtn()");
+    levelbtn.addEventListener("click", nextLevelBtn);
     levelbtn.innerText = "Next Level";
     newGameContainer.append(levelbtn);
 }
