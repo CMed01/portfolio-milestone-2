@@ -176,14 +176,14 @@ Additon to the wireframe includes:
     <br>
 
 * __[JavaScript Testing (JSHint)](https://jshint.com/)__
-    - There are 15 functions in this file.
+    - There are 16 functions in this file.
     - Function with the largest signature take 2 arguments, while the median is 0.
-    - Largest function has 19 statements in it, while the median is 6.
+    - Largest function has 15 statements in it, while the median is 6.
     - The most complex function has a cyclomatic complexity value of 4 while the median is 2.
     - 1 warning on line 174
         - Functions declared within loops referencing an outer scoped variable may lead to confusing semantics. (btnArray, button, dash, winCount, spaceCount, blocker, levelWon, loseCount, removeLifeIcon, gameOver)
         - Nil errors/bugs found in testing
-    - One unused variable - nextLevelBtn
+    - Initially one unused variable - nextLevelBtn
         - This variable is related to a function, which is added an an attribute when creating a new level button. 
         - Change set attribute to addEventListener and variable now used.
 
@@ -192,7 +192,6 @@ Additon to the wireframe includes:
         - Serving static assests with an efficient cache policy
         - Avoid enormous network payloads.
     - ![LightHouse Results](./readme-assets/lighthouse-test.png)
-
 
 ### __Browser Compatability__
 * Browser testing was completed on the following browsers using [SauceLabs](https://saucelabs.com/)
