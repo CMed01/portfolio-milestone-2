@@ -74,7 +74,6 @@ label {
     height: 35px;
     background-image: url("../images/golf-ball-life.jpg");
     background-size: cover;
-    aspect-ratio: 1;
     display: inline-block;
     margin-right: 10px;
 }
