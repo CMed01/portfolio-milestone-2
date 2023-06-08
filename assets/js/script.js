@@ -92,7 +92,7 @@ let levelCount = 0;
 
 let chosenWord = "";
 
-document.addEventListener("DOMContentLoaded", pageLoad())
+document.addEventListener("DOMContentLoaded", pageLoad)
 
 /**
  * Loads backgroud function for game on page load
@@ -110,7 +110,7 @@ function pageLoad() {
  * On click of new game button, the hangman will begin.
  */
 function startGame() {
-    document.addEventListener("click", generateRandomHangman());
+    document.addEventListener("click", generateRandomHangman);
 
     createLifeIcons();
 
@@ -165,7 +165,6 @@ function startGame() {
         letterContainer.append(button);
     }
 }
-
 
 /**
  * Generates a random question and hangman and prints on the screen.
