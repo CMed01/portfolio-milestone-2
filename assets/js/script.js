@@ -73,6 +73,36 @@ const gameQuestion = [
         hangman: "shank",
         hint1: "Another name for a cut of meat",
         hint2: "Golfers worst shot off the heel"
+    }, {
+        question: "Name this golf course",
+        hangman: "old course st andrews",
+        hint1: "Stop at the Jigger Inn for a pint",
+        hint2: "The Swilken bridge connects the 18th tee to the fairway"
+    }, {
+        question: "Name this golf course",
+        hangman: "tpc sawgrass",
+        hint1: "Has a very famous 17th hole",
+        hint2: "Home to the Player's Championship"
+    }, {
+        question: "Name this golfer",
+        hangman: "seve ballesteros",
+        hint1: "Won 5 major championships during his career",
+        hint2: "Spanish golfer, who was world number 1 during his career"
+    }, {
+        question: "Name this golfer",
+        hangman: "tiger woods",
+        hint1: "Studied at Stanford University",
+        hint2: "Only player to hold all four major championships at the same time"
+    }, {
+        question: "Golf terminology",
+        hangman: "birdie",
+        hint1: "shooting one less than the par for a hole",
+        hint2: "type of bird"
+    }, {
+        question: "Name this golf course",
+        hangman: "Royal Troon",
+        hint1: "Open champioship golf course situated just outside Glasgow",
+        hint2: "Henrik Stenson beat Phil Mickleson here for the title in 2016"
     }
 ]
 
