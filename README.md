@@ -184,7 +184,8 @@ Additon to the wireframe includes:
         - Functions declared within loops referencing an outer scoped variable may lead to confusing semantics. (btnArray, button, dash, winCount, spaceCount, blocker, levelWon, loseCount, removeLifeIcon, gameOver)
         - Nil errors/bugs found in testing
     - One unused variable - nextLevelBtn
-        - This variable is related to a function, which is added an an attribute when creating a new level button. Attempt to resolve unused variable with no success. Testing of game found no errors or bugs during gameplay.
+        - This variable is related to a function, which is added an an attribute when creating a new level button. 
+        - Change set attribute to addEventListener and variable now used.
 
 * __Lighthouse testing using (Google Dev Tools)__
     - Performance can be improved by:
