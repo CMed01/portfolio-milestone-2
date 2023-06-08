@@ -35,7 +35,10 @@
                 <h1>WORD LINKS</h1>
             </div>
 
-            <div class="game-inner-container">
+            <div
+                class="game-inner-container">
+
+                <!--  Header bar, that contains point and life containers-->
                 <div id="question-header">
                     <div id="points-container" class="hide">
                         <h4>Total Points</h4>
@@ -50,6 +53,7 @@
                     </div>
                 </div>
 
+                <!-- Hangman questions -->
                 <div id="hangman-container">
                     <p>
                         You have three lives to guess the hidden golf-related word. 
@@ -58,9 +62,11 @@
                         Good luck!
                     </p>
                 </div>
-
+                
+                <!-- Letter button display -->
                 <div id="letter-container"></div>
-
+                
+                <!-- Game buttons display -->
                 <div id="new-game-container">
                     <button class="new-game-btn" onclick="pageLoad(), startGame()">New Game</button>
                 </div>
@@ -69,7 +75,9 @@
         </div>
 
         <footer id="footer">
-            <a href="https://github.com/CMed01" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="https://github.com/CMed01" target="_blank">
+                <i class="fa-brands fa-github"></i>
+            </a>
         </footer>
 
         <script src="assets/js/script.js"></script>

@@ -1,3 +1,4 @@
+/* General styling */
 body {
     background: url("../images/golf-course.jpg") no-repeat center center;
     background-size: cover;
@@ -19,6 +20,7 @@ label {
     font-family: 'Fira Sans', sans-serif;
 }
 
+/* Game Container */
 #game-outer-container {
     width: 90vw;
     height: 80vh;
@@ -99,6 +101,16 @@ label {
     font-weight: bold;
 }
 
+.hangman-selection {
+    font-size: xx-large;
+    letter-spacing: 10px;
+}
+
+.hide {
+    display: none;
+}
+
+/* Hangman letter container and button styling */
 #letter-container {
     width: 75%;
     margin: auto;
@@ -125,6 +137,7 @@ label {
     color: lightgrey;
 }
 
+/* New game container and other button styling */
 #new-game-container {
     width: 60%;
     margin: auto;
@@ -140,27 +153,19 @@ label {
     margin: 2em auto;
 }
 
-.hangman-selection {
-    font-size: xx-large;
-    letter-spacing: 10px;
-}
-
-.hide {
-    display: none;
-}
-
 .next-level-btn,
 .restart-btn {
     font-size: 1em;
     border-radius: 5px;
     margin: 2em auto;
 }
-
+/* Win or lose message display */
 .pmessage {
     text-align: center;
     font-weight: bold;
 }
 
+/* Footer */
 #footer {
     display: flex;
     justify-content: center;
