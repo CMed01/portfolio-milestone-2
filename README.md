@@ -1,12 +1,13 @@
 # __Portfolio Project 2 - JaveScript__
-## __INSERT NAME OF GAME HERE__
-
+## __Word Links__
+![Word Links](./assets/images/golf-links-icon.png)
 
 ### __Demo__
 
-The live site can be viewed here - 
+The live site can be viewed here - [Word Links](https://cmed01.github.io/portfolio-milestone-2/)
 
-Github repository can be viewed here - 
+Github repository can be viewed here - [CMed01/portfolio-milestone-2](https://github.com/CMed01/portfolio-milestone-2)
+
 
 
 ## Table of Contents
@@ -53,15 +54,16 @@ Based on the content required in the scope of this projec, this website will con
 ### __Skelton (Wireframes)__
 
 Single wireframe image. The website will be responsive fitting all elements inside the width of the user screen.
-![Home Page Wireframe](/wireframe-golf-game.png)
+![Home Page Wireframe](./readme-assets/wireframe-golf-game.png)
 <br>
 Additon to the wireframe includes:
 * Points counter.
 * Timer.
-* Hint and restart buttons that will appear after gane loading.
+* Restart buttons that will appear after game loading.
 
 ### __Surface (including Features)__
-
+#### __Colour Scheme__
+![Color Scheme](./readme-assets/colour-scheme-project2.png)
 #### __Typography__
 *  Google fonts was used for the typography for this website
     * Fira Sans - used for all heading 1 elements
@@ -70,56 +72,75 @@ Additon to the wireframe includes:
     * Sans serif - used as back-up font
  
 #### __Features__
-* Loading page
-    * Header for the page to include the the name of the game. 
-    * Div container displaying the rules of the game and a "new game" start button.
+* Home page
+    * Game title to be visible at the top of the page. 
+    * Clear game container displaying the rules of the game and a "new game" start button.
+    * The background displays a scenic golf hole immersing the user into the theme for the game.
+    * A GitHub link will be present at the bottom of the page and when clicked th user will be taken to the developers GitHub repository
+
+![Home Page](./readme-assets/screenshots/home-page.png)
+
+<br>
 
 * New game button
     * On click of this button, the following will take place:
-        1. The lives counter will display three lives (each a golf ball on a tee image).
-        2. The points counter will be present displaying "0" at the start of the game.
+        1. A lives counter will load and display three lives, each represented with a golf ball on a tee image.
+        2. A points counter will load displaying "0" at the start of the game.
         3. A keyboard with 26 individual buttons, container letters A-Z, will appear. These buttons will have clickable functionality.
-        4. A random question and it's associated properties will be generated. 
-        5. The question, directing the user to the theme of the hangman will appear.
+        4. A random question will load at the top of the screen.
+        5. The answer to the question will appear obscured by a series of dashes. Each dash representing a letter in the answer.
         6. The answer will appear initialling a blank underscores, each underscore representing a letter.
+        7. The "new game" button will be replaced with a "restart button", which when clicked will reload the page and bring the user back to the start
+
+![New Game](./readme-assets/screenshots/new-game.png)
+
+<br>
 
 * Game screen
-    * The user can interact with the game by clicking on infividual letters. Doing so will check if the chose letter matches a letter in the randomly generated hangman
-    * After pressing a button, the button will be disabled preventing duplication.
+    * The user can interact with the game by clicking on infividual letters. Doing so will check if the chosen letter matches a letter in the randomly generated hangman
     * If the letter is correct, then it will replace the underscore with the chosen letter
-    * If the letter is not correct, the user will lose a life and will be refelecting the lives counter
+    * If the letter is not correct, the user will lose a life, which will be refelected the lives counter
+    * After pressing a button, the button will be disabled preventing duplication.
+
+![Game Screen](./readme-assets/screenshots/game-letters-interaction.png)
+
+* Level complete
+    * If the user selects all the correct letters without losing all their lives. The keyboard will be replaced with a winning message will appear (a different one for level 1 and level 2).
+    * The points counter will be updated to reflect the win, with a total on 10 points on offer. 
+    * Each live lost will reduce the score by 2 points.
+    * A "next level" button will appear along side the "restart button", and when click will generate another random question.
+
+![Level One Win Message Screen](./readme-assets/screenshots/level-1-win.png)
+![Level Two Win Message Screen](./readme-assets/screenshots/level-2-win.png)
+
+* Completion of game
+    * If the user successfully completes three levels, the keyboard will be replaced with a congratulations message will appear.
+    * The total points scored by the user will be included in the message.
+    * Only the restart button will be present allowing the user to replay the game.
+    
+![Game Won Message Screen](./readme-assets/screenshots/game-win.png)
 
 * Game over
-    * If the user selects three incorrect letters before the word is fully revealed a message will appear stating the end of the game. 
+    * If the user selects three incorrect letters before the word is fully revealed the keyboard will be replaced with a game over message. 
     * The full word will not be revealed to allow for replayability
     * A "restart game" button will be present for the user to click and restart the game. On click the page will be reloaded, subsequantly restarting the game.
 
-* Level complete
-    * If the user selects all the correct letters without losing all their lives. A winning message will appear.
-    * The points counter will be updated to reflect the win, with a total on 10 points on offer. 
-    * Each hint (see below) will reduce the total points available.
-    * Each live lost will also reduce the total points available.
-    * A "next level" button will appear and when click will generate another random question
-
-* Completion of game
-    * If the user successfully completes three levels, a congratulations message will appear.
-    * The total points will be included in the message
-    * A button will also appear to restart the game allowing the user to replay it with the aim of either beating their previous score or attempt other randomly generated questions.
-
-* Hint button
-    * For each questions, there will be two hints on offer.
-    * A button will be present for the user to reveal these hints providing support to the user to answer the hangman correctly
-    * Each hint will dimish the score by 2 points.
+![Game Over Message Screen](./readme-assets/screenshots/game-over.png)
 
 * Future
-    * Increased question bank to imporve replayability
-        * There are currently 9 questions. This can be increased substantionally to allow further replayability.
+    * Add code to prevent recurrent questons being selected during one game (i.e. between level 1, 2 and 3)
+    * Increased question bank to improve replayability
+        * There are currently 20 questions. This can be increased substantionally to allow further replayability.
     * Allow user to filter the question choice
         * Currently the questions are all contined in a single array. Future changes can group these into categories, allowing the user to filter the questions asked.
+    * Allow user to chose the size of the questions for each game (currently set at 3 levels). This will further increase replayability.
+    * Hint button
+        * For each questions, there will be two hints on offer.
+        * A button will be present for the user to reveal these hints providing support to the user to answer the hangman correctly
+        * Each hint will dimish the score by 2 points. 
     * Record user's high scores
         * There is currently no function for the user to enter in any personal details, such as a username. Additon of this will further enhance user replayability.
         * A high score storing function will challenge users to beat their previous attempts.
-    * Allow user to chose the size of the questions for each game (currently set at 3 levels). This will further increase replayability.
     * Introducee a timer function to add extra pressure to answer all questions correctly.
 
 ## __Technologies__
