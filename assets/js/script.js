@@ -104,13 +104,12 @@ const gameQuestion = [
         hint1: "Open champioship golf course situated just outside Glasgow",
         hint2: "Henrik Stenson beat Phil Mickleson here for the title in 2016"
     }
-]
+];
 
 // General variables
 const letterContainer = document.getElementById("letter-container");
 const questionHangman = document.getElementById("hangman-container");
 const questionQuestion = document.getElementById("question-container");
-const newGameButton = document.getElementsByClassName("new-game-btn");
 const newGameContainer = document.getElementById("new-game-container");
 const livesContainer = document.getElementById("lives-container");
 const lifeImage = document.getElementById("life-images");
@@ -123,7 +122,7 @@ let levelCount = 0;
 
 let chosenWord = "";
 
-document.addEventListener("DOMContentLoaded", pageLoad)
+document.addEventListener("DOMContentLoaded", pageLoad);
 
 /**
  * Loads backgroud function for game on page load
@@ -172,14 +171,15 @@ function startGame() {
         // This will return an array of the letters contained in the hanagman
 
 
-        button.addEventListener("click", function () { // Check if button is equal to letter in hangman then display in text.
+        button.addEventListener("click", function () { 
+            // Check if button is equal to letter in hangman then display in text.
             if (btnArray.includes(button.innerText)) {
                 btnArray.forEach(function checkLetters(char, index) {
                     if (char === button.innerText) {
                         dash[index].innerText = char;
-                        winCount += 1
+                        winCount += 1;
                         if ((winCount + spaceCount) === btnArray.length) {
-                            blocker()
+                            blocker();
                             levelWon();
                         }
                     }
@@ -192,7 +192,7 @@ function startGame() {
                     blocker();
                 }
             } button.disabled = true;
-        })
+        });
         letterContainer.append(button);
     }
 }
@@ -205,7 +205,7 @@ function generateRandomHangman() { // Generate random Number
 
     // Use random number to generate Hangman
     chosenWord = gameQuestion[randomQuestionIndex].hangman;
-    chosenWord = chosenWord.toUpperCase()
+    chosenWord = chosenWord.toUpperCase();
     questionHangman.innerHTML = `<div class="hangman-selection">${chosenWord}</div>`;
 
 
@@ -214,16 +214,16 @@ function generateRandomHangman() { // Generate random Number
     questionHangman.innerHTML = initialHangmanDisplay;
 
     // Use random number to append question
-    let chosenQuestion = gameQuestion[randomQuestionIndex].question
+    let chosenQuestion = gameQuestion[randomQuestionIndex].question;
     questionQuestion.innerHTML = `<div class="question-selection">${chosenQuestion}</div>`;
 }
 
 // block letter buttons when win or lose game
 function blocker() {
-    let letterBtn = document.querySelectorAll(".letters")
+    let letterBtn = document.querySelectorAll(".letters");
     letterBtn.forEach(function (button) {
         button.disabled = true;
-    })
+    });
 }
 
 /**
@@ -253,7 +253,7 @@ function levelWon() {
         let levelbtn = document.createElement("button");
         levelbtn.classList.add("next-level-btn");
         levelbtn.setAttribute("onclick", "nextLevelBtn()");
-        levelbtn.innerText = "Next Level"
+        levelbtn.innerText = "Next Level";
 
         newGameContainer.append(levelbtn);
     }
@@ -296,7 +296,7 @@ function gameWon() {
  * Adds a comiseration mesaage and restarts the game
  */
 function gameOver() {
-    letterContainer.innerHTML = ""
+    letterContainer.innerHTML = "";
     let loseMessage = document.createElement("p");
     loseMessage.classList.add("pmessage");
     loseMessage.innerHTML = "Unlucky, you did not enter the correct letters. Click on restart game and give it another go!";
@@ -327,7 +327,7 @@ function removeLifeIcon() {
     if (removeImgDiv.length > 0) {
         lifeImage.removeChild(removeImgDiv[removeImgDiv.length - 1]);
     }
-};
+}
 
 /**
  * Creates a restart button that reloads the page and resetting the game.
