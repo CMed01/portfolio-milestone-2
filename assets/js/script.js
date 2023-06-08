@@ -203,6 +203,7 @@ function hintReveal() {}
  * Creates next level button and add 1 to the level count. If completes 3 levels then initiates gameWon()
  */
 function levelWon() {
+    letterContainer.innerHTML = "";
     let livesRemaining = lifeImage.children.length;
     let pointScore = 10 - (6 - (2 * (livesRemaining))) + (parseInt(totalPoints.innerText));
     totalPoints.innerText = pointScore;
@@ -268,9 +269,10 @@ function gameWon() {
  * Adds a comiseration mesaage and restarts the game
  */
 function gameOver() {
+    letterContainer.innerHTML = ""
     let loseMessage = document.createElement("p");
     loseMessage.classList.add("pmessage");
-    loseMessage.innerHTML = "Unlucky, click on new game and give it another go";
+    loseMessage.innerHTML = "Unlucky, you did not enter the correct letters. Click on restart game and give it another go!";
     letterContainer.append(loseMessage);
 
     restartButton();
