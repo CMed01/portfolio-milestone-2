@@ -87,7 +87,7 @@ label {
 #question-container {
     width: 75%;
     max-width: 200px;
-    margin: 30px auto;
+    margin: 10px auto 30px auto;
     text-align: center;
     font-size: larger;
     font-weight: bold;
@@ -121,16 +121,19 @@ label {
 }
 
 #letter-container button {
+    color:#353A2F;
     font-weight: bold;
     height: 1.4em;
     width: 3em;
     height: 3em;
     border-radius: 5px;
     background-color: aliceblue;
+    border: 2px solid #767676;
+    border-style: outset;
 }
 
 #letter-container button:hover {
-    background-color: slategray;
+    background-color: #888898;
 }
 
 #letter-container button:disabled {
