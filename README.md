@@ -264,7 +264,7 @@ The link to the live website can be found here -
 
 4. Change the working directory to the location where you want the clone directory.
 
-5. On the command line, type "git clone" then paste in the copied url (https://github.com/CMed01/Portfolio-Milestone-1.git) and press the Enter key to begin the clone process
+5. On the command line, type "git clone" then paste in the copied url (https://github.com/CMed01/portfolio-milestone-2.git) and press the Enter key to begin the clone process
 
 ## __Credits__
 
