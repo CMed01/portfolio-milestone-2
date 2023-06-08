@@ -48,7 +48,7 @@ Content should include the following:
 * Link to the developers GitHub account.
 
 ### __Structure__
-Based on the content required in the scope of this project, this website will consist of only 1 page. The home page will have the game title display clearly the rules of the game with a start button. On click of the start button the game will load and have interactive functionality. The game will be contained in a centralised container, with a golf themed background image.
+Based on the content required in the scope of this project, this website will consist of only 1 page. The home page will have the game title and display clearly the rules of the game with a start button. On click of the start button the game will load and have interactive functionality. The game will be contained in a centralised container, with a golf themed background image.
 
 ### __Skelton (Wireframes)__
 <details open>
@@ -192,8 +192,8 @@ Addition to the wireframe includes:
 
 * __Lighthouse testing using [PageSpeed Insights](https://pagespeed.web.dev/)__
     - Performance can be improved on mobile by:
-        - Eliminate render-blocking resources
-        - Update images to next gen formulas
+        - Eliminating render-blocking resources
+        - Updating images to next gen formulas
     - ![LightHouse Results Mobile](./readme-assets/lighthouse-mobile.png)
     - ![LightHouse Results Desktop](./readme-assets/lighthouse-desktop.png)
 
