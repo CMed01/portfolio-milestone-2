@@ -121,9 +121,8 @@ label {
 }
 
 #letter-container button {
-    color:#353A2F;
+    color: #353A2F;
     font-weight: bold;
-    height: 1.4em;
     width: 3em;
     height: 3em;
     border-radius: 5px;
@@ -162,6 +161,7 @@ label {
     border-radius: 5px;
     margin: 2em auto;
 }
+
 /* Win or lose message display */
 .pmessage {
     text-align: center;
@@ -183,6 +183,14 @@ label {
 }
 
 /* Media Queries */
+/* Tablet devices (tablets, 1000px and down) */
+@media only screen and (max-width: 1000px) {
+    #letter-container button {
+        width: 2.5em;
+        height: 2.5em;
+    }
+}
+
 /* Tablet devices (tablets, 850px and down) */
 @media only screen and (max-width: 850px) {
     body {
