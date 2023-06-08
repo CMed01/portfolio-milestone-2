@@ -171,7 +171,9 @@ function startGame() {
         // This will return an array of the letters contained in the hanagman
 
 
-        button.addEventListener("click", function () { // Check if button is equal to letter in hangman then display in text.
+        button.addEventListener("click", function () { 
+            
+            // Check if button is equal to letter in hangman then display in text.
             if (btnArray.includes(button.innerText)) {
                 btnArray.forEach(function checkLetters(char, index) {
                     if (char === button.innerText) {

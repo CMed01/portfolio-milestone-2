@@ -275,6 +275,7 @@ The link to the live website can be found here -
 ### __Code__
 
 * Code on how to add a Favicon to the website was based on example code from [W3Schools HTML Favicon](https://www.w3schools.com/html/html_favicon.asp#:~:text=To%20add%20a%20favicon%20to,is%20%22favicon.ico%22.)
+* Code on how to iterate through HTML ASCII was based on an example code from [Coding Artist](https://codingartistweb.com/2022/05/hangman-game-with-javascript/)
 
 
 ### __Media__
