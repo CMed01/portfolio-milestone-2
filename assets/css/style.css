@@ -184,13 +184,17 @@ label {
 /* Media Queries */
 /* Tablet devices (tablets, 1000px and down) */
 @media only screen and (max-width: 1000px) {
+    body {
+        background-size: 175%;
+    }
+
     #letter-container button {
         width: 2.5em;
         height: 2.5em;
     }
 }
 
-/* Tablet devices (tablets, 850px and down) */
+/* Smaller tablet devices (tablets, 850px and down) */
 @media only screen and (max-width: 850px) {
     body {
         background-size: 200%;
@@ -230,7 +234,7 @@ label {
     }
 }
 
-/* small devices (phones, 650px and down) */
+/* Small devices (phones, 650px and down) */
 @media only screen and (max-width: 650px) {
 
     .game-inner-container {
