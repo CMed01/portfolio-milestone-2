@@ -1,4 +1,4 @@
-// Options for the hangman
+// Question options for the hangman
 const gameQuestion = [
     {
         question: "Name this golfer",
@@ -76,6 +76,7 @@ const gameQuestion = [
     }
 ]
 
+// General variables
 const letterContainer = document.getElementById("letter-container");
 const questionHangman = document.getElementById("hangman-container");
 const questionQuestion = document.getElementById("question-container");
@@ -183,10 +184,8 @@ function generateRandomHangman() { // Generate random Number
     questionHangman.innerHTML = initialHangmanDisplay;
 
     // Use random number to append question
-    chosenQuestion = gameQuestion[randomQuestionIndex].question
+    let chosenQuestion = gameQuestion[randomQuestionIndex].question
     questionQuestion.innerHTML = `<div class="question-selection">${chosenQuestion}</div>`;
-
-    // Use random number to append hint1 and hint2
 }
 
 // block letter buttons when win or lose game
@@ -196,8 +195,6 @@ function blocker() {
         button.disabled = true;
     })
 }
-
-function hintReveal() {}
 
 /**
  * Creates next level button and add 1 to the level count. If completes 3 levels then initiates gameWon()
