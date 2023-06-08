@@ -71,8 +71,8 @@ label {
 
 .life {
     width: 30px;
-    height: 35px;
-    background-image: url("../images/golf-ball-life.jpg");
+    height: 30px;
+    background-image: url("../images/golf-ball-life2.png");
     background-size: cover;
     display: inline-block;
     margin-right: 10px;
@@ -216,7 +216,7 @@ label {
 
     .life {
         width: 20px;
-        height: 25px;
+        height: 20px;
     }
 
     #letter-container button {
@@ -275,7 +275,7 @@ label {
 
     .life {
         width: 15px;
-        height: 20px;
+        height: 15px;
         margin-right: 5px;
     }
 
@@ -316,7 +316,7 @@ label {
 
     .life {
         width: 13px;
-        height: 15px;
+        height: 13px;
         margin-right: 3px;
     }
 
