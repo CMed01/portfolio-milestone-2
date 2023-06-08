@@ -164,31 +164,33 @@ Additon to the wireframe includes:
 ### __Validator testing__
 
 * __[W3C Markup Validation Service](https://validator.w3.org/)__
-    * Pass with no errors or warnings
-    * ![Markup result](./readme-assets/html-w3c-validator.png)
+    - Pass with no errors or warnings
+    - ![Markup result](./readme-assets/html-w3c-validator.png)
 
 <br>
 
 * __[W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/)__
-    * Pass with no errors found.
-    * ![Markup result](./readme-assets/css-validator.png)
+    - Pass with no errors found.
+    - ![Markup result](./readme-assets/css-validator.png)
     
     <br>
 
 * __[JavaScript Testing (JSHint)](https://jshint.com/)__
-    * There are 15 functions in this file.
-    * Function with the largest signature take 2 arguments, while the median is 0.
-    * Largest function has 19 statements in it, while the median is 6.
-    * The most complex function has a cyclomatic complexity value of 4 while the median is 2.
-    * 1 warning on line 174
-        * Functions declared within loops referencing an outer scoped variable may lead to confusing semantics. (btnArray, button, dash, winCount, spaceCount, blocker, levelWon, loseCount, removeLifeIcon, gameOver)
-        * Nil errors/bugs found in testing
-    * One unused variable - nextLevelBtn
-        * This variable is related to a function, which is passed to a created button element and used with no errors/bugs.
+    - There are 15 functions in this file.
+    - Function with the largest signature take 2 arguments, while the median is 0.
+    - Largest function has 19 statements in it, while the median is 6.
+    - The most complex function has a cyclomatic complexity value of 4 while the median is 2.
+    - 1 warning on line 174
+        - Functions declared within loops referencing an outer scoped variable may lead to confusing semantics. (btnArray, button, dash, winCount, spaceCount, blocker, levelWon, loseCount, removeLifeIcon, gameOver)
+        - Nil errors/bugs found in testing
+    - One unused variable - nextLevelBtn
+        - This variable is related to a function, which is passed to a created button element and used with no errors/bugs.
 
-* __Lighthouse testing using [PageSpeed Insights](https://pagespeed.web.dev/)__
-    - Images can be converted to next-gen formats to improve performance on mobile devices
-    - [Results](https://pagespeed.web.dev/analysis/https-cmed01-github-io-Portfolio-Milestone-1/64l0tgdbae?form_factor=mobile)
+* __Lighthouse testing using (Google Dev Tools)__
+    - Performance can be improved by:
+        - Serving static assests with an efficient cache policy
+        - Avoid enormous network payloads.
+    - ![LightHouse Results](./readme-assets/lighthouse-test.png)
 
 
 ### __Browser Compatability__
@@ -199,7 +201,18 @@ Additon to the wireframe includes:
     - Safari Version 16.1 (18614.2.9.1.12) (accessed via macOS Ventura 13) 
 
 ### __Test Cases and Results__
-
+| Test no. |            Test Label            |         Test Action         |                                                                                                                                                                                                                                                                                                                                                     Expected Outcome                                                                                                                                                                                                                                                                                                                                                    | Test Outcome |
+|:--------:|:--------------------------------:|:---------------------------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:------------:|
+| T01      | UX - Page Load                   | Load page                   | The game container is central to the page and contains the following: 1. The title is capitalised 2. A welcome message appears 3. A new game button with a light green backgound appears                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | Pass         |
+| T02      | Interaction - New Game Button    | Click new game button       | On click the game loads and contains: 1. Total Points and 0 is displayed in the top left 2. Question details top center 3. Lives remaining and three square images, evenly spaced 4. A hangman styled display with a number of underscores 5. A keyboard with 26 evenly spaced letter buttons 6. New game button is replaced with a start button                                                                                                                                                                                                                                                                                                                                                                        | Pass         |
+| T03      | Interaction - Letter buttons     | Click all 26 letter buttons | If a letter is present in the game answer, then an underscore/s will e replaced with the associated letter button. I.e. If "L" is clicked and present all the "L"'s present in the answer will be revealed.  If a letter is not present then the associated letter will not appear and 1 image under lives remaining will disappear. Once all three images have dissappeared (i.e. three incorrect letters) The game over function will occur. See test T08.  As this is a live game - during the above process, click restart button as needed to restart the game and continue to test each button functionaility.  All letter buttons when cicked will be disabled and not allow the user to click the button again. |              |
+| T04      | Interaction - Restart button     | Click the restart button    |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |              |
+| T05      | UX - Total Points                |                             |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |              |
+| T06      | UX - Lives remaining             |                             |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |              |
+| T07      | UX - Level win                   |                             |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |              |
+| T08      | UX - Game over                   |                             |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |              |
+| T09      | UX - Game win                    |                             |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |              |
+| T10      | Interaction - Next level button, |                             |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |              |
 
 ## __Deployement__
 
